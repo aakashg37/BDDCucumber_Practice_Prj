@@ -18,7 +18,7 @@ public class LoginPage
 	@FindBy(xpath="//input[@placeholder='Username']") private WebElement Username;
 	@FindBy(xpath="//input[@name='password']") private WebElement Password;
 	@FindBy(xpath="//button[text()=' Login ']") private WebElement LoginBtn;
-	
+	@FindBy(xpath="//h6[text()='Dashboard']") private WebElement Dashboard;
 	
 	
 	//2) Initialize within a constructor with access level public using PageFactory Class
@@ -29,6 +29,28 @@ public class LoginPage
 		PageFactory.initElements(driver, this);
 	}
 	
+	
+	public boolean verifyAppLogo() {
+		boolean logoElement = Logo.isDisplayed();
+		return logoElement;
+	}
+	
+	public void enterUsername(String username) {
+		Username.sendKeys(username);
+	}
+	
+	public void enterPassword(String password) {
+		Password.sendKeys(password);
+	}
+	
+	public void clickOnLoginButton() {
+		LoginBtn.click();
+	}
+	
+	public String navigatedToDashboardPage() {
+		String page=Dashboard.getText();
+		return page;
+	}
 	
 }
 

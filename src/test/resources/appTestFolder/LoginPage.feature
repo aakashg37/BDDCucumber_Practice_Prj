@@ -5,11 +5,11 @@ Feature: Login WebPage Functionality
 		Then the application logo should be displayed
 	
 	Scenario Outline: Login with valid credentials
-	Given user is on login page
-	When user enters valid "<username>"
-	And user enters valid "<password>"
-	And User clicks on login Button
-	Then User Should be navigated to Dashboard Page
+		Given user is on Login Page
+		When user enters valid username "<username>"
+		And user enters valid password "<password>"
+		And User clicks on login Button
+		Then User Should be navigated to "<Dashboard>" Page
 	
 	Examples:
 	|username|password|
